@@ -26,6 +26,7 @@ object Repository {
     private fun buildOkHttpClient(): OkHttpClient =
         OkHttpClient.Builder()
             .addInterceptor(
+                // http 통신에 대한 로그를 찍어 준다.
                 HttpLoggingInterceptor().apply {
                     level = if(BuildConfig.DEBUG) {
                         HttpLoggingInterceptor.Level.BODY
